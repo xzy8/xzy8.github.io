@@ -18,8 +18,10 @@
 <meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006152344037.png">
 <meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006154639865.png">
 <meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006160425060.png">
+<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006161249407.png">
+<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006163309008.png">
 <meta property="article:published_time" content="2020-10-06T07:02:28.102Z">
-<meta property="article:modified_time" content="2020-10-06T08:11:05.899Z">
+<meta property="article:modified_time" content="2020-10-06T08:47:19.068Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006150540773.png">
@@ -111,10 +113,9 @@
 
 <hr>
 <h3 id="4-博客的搭建及部署"><a href="#4-博客的搭建及部署" class="headerlink" title="4.博客的搭建及部署"></a>4.博客的搭建及部署</h3><ul>
-<li><p>初始化博客</p>
-<p>创建一个文件作为你本地的博客路径，进入目录使用<strong>hexo -init</strong>指令进行初始化（时间略长）。    </p>
-</li>
+<li>初始化博客</li>
 </ul>
+<p>​    创建一个文件作为你本地的博客路径，进入目录使用<strong>hexo -init</strong>指令进行初始化（时间略长）。    </p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">md</span> blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">hexo <span class="literal">-init</span></span><br></pre></td></tr></table></figure>
 
 <p>​    注：初始化时如果遇到如下错误，则表示Git的安装有误，请重新下载安装Git</p>
@@ -126,20 +127,30 @@
 <img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20201006160425060.png" alt="image-20201006160425060" style="zoom:70%;" align="left"/>
 
 <hr>
-<p>启动hexo</p>
-<p>使用如下命令启动hexo。</p>
+<ul>
+<li>启动hexo</li>
+</ul>
+<p>​    使用如下命令启动hexo。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p>如果启动正常则显示如下信息通过提供的4000端口，在浏览器中即可访问本地博客。</p>
+<p>​    如果hexo启动正常则显示如下信息通过提供的4000端口号的网址，在浏览器中即可访问本地博客，访问页面如下所示。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  <span class="built_in">Start</span> processing</span><br><span class="line">INFO  Hexo is running at http://localhost:<span class="number">4000</span> . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
 
+<img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20201006161249407.png" alt="image-20201006161249407" style="zoom:50%;" />
 
+<hr>
+<ul>
+<li>通过GitHub仓库将hexo部署到云端</li>
+</ul>
+<p>​    打开GitHub的个人主页选择右上角的号然后选择新建仓库。新的仓库名必须符合如下的命名规范，即**<em>用户名.github.io**</em>，创建成功后复制下生成仓库的地址。接下来进入博客目录，并且通过下面指令安装Git插件。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer</span><span class="literal">-git</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
 
-
+<p>​    通过文本编辑器打开博客文件夹的_config.yml文件，找到最下面的Deployment处按照如下要求输入后保存退出即可。</p>
+<img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20201006163309008.png" alt="image-20201006163309008" style="zoom:70%;" />
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="ckfxpuw1a0001aguk0phjckmd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="ckfxq7qfc0001tkuk9ob22yaf" class="article-share-link">Share</a>
       
       
     </footer>
