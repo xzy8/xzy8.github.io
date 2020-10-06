@@ -21,7 +21,7 @@
 <meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006161249407.png">
 <meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006163309008.png">
 <meta property="article:published_time" content="2020-10-06T07:02:28.102Z">
-<meta property="article:modified_time" content="2020-10-06T08:47:19.068Z">
+<meta property="article:modified_time" content="2020-10-06T09:10:50.059Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20201006150540773.png">
@@ -97,15 +97,15 @@
 <p>​    同样在下载完成后进入cmd命令行输入<strong>git –version</strong>命令，如果正常显示版本号则安装完成。</p>
 <hr>
 <h3 id="3-安装hexo框架"><a href="#3-安装hexo框架" class="headerlink" title="3.安装hexo框架"></a>3.安装hexo框架</h3><ul>
-<li>使用淘宝的镜像源安装cnpm，使用如下命令，安装完成使用<strong>cnpm -v</strong>检查。</li>
+<li><strong>安装cnpm</strong></li>
 </ul>
+<p>​    使用淘宝的镜像源安装cnpm，使用如下命令，安装完成使用<strong>cnpm -v</strong>检查。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> cnpm -<span class="literal">-registry</span>=https://registry.npm.taobao.org</span><br><span class="line">cnpm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 
 <p>​    <strong>注</strong>：如果安装失败则有可能是因为没有使用管理员身份打开cmd，关闭cmd重新使用管理员身份运行即可。win+S 打开搜索框 —— 输入cmd ——右键选择以管理员身份运行。</p>
 <hr>
-<ul>
-<li>使用cnpm全局安装hexo框架，同样使用<strong>hexo -v</strong>检查安装是否成功。</li>
-</ul>
+<pre><code>* **安装hexo框架**</code></pre>
+<p>​    使用cnpm全局安装hexo框架，同样使用<strong>hexo -v</strong>检查安装是否成功。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br><span class="line">hexo <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 
 <p>​    显示如下则表示安装成功。</p>
@@ -113,7 +113,7 @@
 
 <hr>
 <h3 id="4-博客的搭建及部署"><a href="#4-博客的搭建及部署" class="headerlink" title="4.博客的搭建及部署"></a>4.博客的搭建及部署</h3><ul>
-<li>初始化博客</li>
+<li><strong>初始化博客</strong></li>
 </ul>
 <p>​    创建一个文件作为你本地的博客路径，进入目录使用<strong>hexo -init</strong>指令进行初始化（时间略长）。    </p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">md</span> blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">hexo <span class="literal">-init</span></span><br></pre></td></tr></table></figure>
@@ -128,7 +128,7 @@
 
 <hr>
 <ul>
-<li>启动hexo</li>
+<li><strong>启动hexo</strong></li>
 </ul>
 <p>​    使用如下命令启动hexo。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
@@ -140,17 +140,22 @@
 
 <hr>
 <ul>
-<li>通过GitHub仓库将hexo部署到云端</li>
+<li><strong>通过GitHub仓库将hexo部署到云端</strong></li>
 </ul>
 <p>​    打开GitHub的个人主页选择右上角的号然后选择新建仓库。新的仓库名必须符合如下的命名规范，即**<em>用户名.github.io**</em>，创建成功后复制下生成仓库的地址。接下来进入博客目录，并且通过下面指令安装Git插件。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer</span><span class="literal">-git</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
 
 <p>​    通过文本编辑器打开博客文件夹的_config.yml文件，找到最下面的Deployment处按照如下要求输入后保存退出即可。</p>
 <img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20201006163309008.png" alt="image-20201006163309008" style="zoom:70%;" />
+
+<p>​    最后使用<strong>hexo -d</strong>命令部署到远端，第一次部署需要输入用户名和密码，最后将仓库地址复制到浏览器中通过仓库地址即可访问云端部署的博客。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="literal">-d</span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="ckfxq7qfc0001tkuk9ob22yaf" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="ckfxqujki00017cukejlgekgd" class="article-share-link">Share</a>
       
       
     </footer>
